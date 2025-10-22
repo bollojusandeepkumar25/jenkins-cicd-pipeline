@@ -6,6 +6,7 @@ pipeline {
             steps {
                 echo 'Building Docker image...'
                 bat 'docker build -t myapp:latest .'
+
             }
         }
 
@@ -18,6 +19,7 @@ pipeline {
 
         stage('Deploy') {
             steps {
+                bat 'docker push bollojusandeepkumar/myapp:latest'
                 echo 'Deploying container...'
                 bat 'docker stop myapp || exit 0'
                 bat 'docker rm myapp || exit 0'
