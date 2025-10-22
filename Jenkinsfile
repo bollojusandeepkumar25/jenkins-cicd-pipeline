@@ -19,7 +19,7 @@ pipeline {
 
         stage('Deploy') {
             steps {
-                bat 'docker push bollojusandeepkumar/myapp:latest'
+                bat 'docker push bollojusandeepkumar25/myapp:latest'
                 echo 'Deploying container...'
                 bat 'docker stop myapp || exit 0'
                 bat 'docker rm myapp || exit 0'
